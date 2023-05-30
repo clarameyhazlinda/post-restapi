@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const Post = require('../models/Post')
-const {
-    json
-} = require('body-parser')
+//const {
+//    json
+//} = require('body-parser')
 
 function result(succ, msg, details) {
     if (details) {
