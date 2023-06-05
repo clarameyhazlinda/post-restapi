@@ -32,22 +32,22 @@ router.get('/', async (req, res) => {
             },
             {
                 $set: {
-                    id: '$id',
+                    id: '$_id',
                     username: {
                         $arrayElemAt: ['$userData.username', 0]
                     },
                     created_date: {
                         $dateToString: {
-                            format: '%d-%m,%Y %H:%M:%S',
+                            format: '%d-%m-%Y %H:%M:%S',
                             date: '$created_date',
-                            timezone: "+07:00"
+                            timezone: '+07:00'
                         }
                     },
                     modified_date: {
                         $dateToString: {
-                            format: '%d-%m,%Y %H:%M:%S',
+                            format: '%d-%m-%Y %H:%M:%S',
                             date: '$modified_date',
-                            timezone: "+07:00"
+                            timezone: '+07:00'
                         }
                     }
                 }
